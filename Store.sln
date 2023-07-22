@@ -6,16 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{C2339E6C-08B4-4794-A944-A840977A4B00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00CD4419-E14B-4CAC-AF60-2D686229CA5D}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\Directory.Packages.props = Tests\Directory.Packages.props
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{128F2691-5A4F-4092-9DD7-D7FC77FB6BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{128F2691-5A4F-4092-9DD7-D7FC77FB6BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{2C9CBB5E-E3E5-4C48-9908-EBDB0A3461F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{2C9CBB5E-E3E5-4C48-9908-EBDB0A3461F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{3C0E9A2F-759D-4C94-A4B1-D963B68813B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{3C0E9A2F-759D-4C94-A4B1-D963B68813B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BC881F8A-B891-4DAF-B164-EED249D093F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BC881F8A-B891-4DAF-B164-EED249D093F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{9DA55ACA-45DF-4299-A058-B05625C479D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{9DA55ACA-45DF-4299-A058-B05625C479D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{B1D66C72-7422-4DE8-8706-95588D31B74D}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{B1D66C72-7
 		.gitignore = .gitignore
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Test", "Tests\API.Test\API.Test.csproj", "{68184644-154C-4563-B97D-6471CED6378C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +55,10 @@ Global
 		{9DA55ACA-45DF-4299-A058-B05625C479D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DA55ACA-45DF-4299-A058-B05625C479D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DA55ACA-45DF-4299-A058-B05625C479D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68184644-154C-4563-B97D-6471CED6378C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68184644-154C-4563-B97D-6471CED6378C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68184644-154C-4563-B97D-6471CED6378C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68184644-154C-4563-B97D-6471CED6378C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +69,7 @@ Global
 		{3C0E9A2F-759D-4C94-A4B1-D963B68813B8} = {C2339E6C-08B4-4794-A944-A840977A4B00}
 		{BC881F8A-B891-4DAF-B164-EED249D093F4} = {C2339E6C-08B4-4794-A944-A840977A4B00}
 		{9DA55ACA-45DF-4299-A058-B05625C479D8} = {C2339E6C-08B4-4794-A944-A840977A4B00}
+		{68184644-154C-4563-B97D-6471CED6378C} = {00CD4419-E14B-4CAC-AF60-2D686229CA5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {936C2301-CC80-47C1-8711-10AA07B420D3}
