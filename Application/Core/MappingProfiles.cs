@@ -8,5 +8,8 @@ public class MappingProfiles : Profile
     public MappingProfiles()
     {
         CreateMap<CreateProductDto, Product>();
+        CreateMap<Product, GetProductDto>()
+            .ForMember(ds => ds.Creator,
+            src => src.MapFrom(x => $"{x.Creator.FirstName} {x.Creator.LastName}"));
     }
 }
