@@ -1,5 +1,7 @@
 ﻿using API.Helper.Services;
+using Application.Products;
 using Domain;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -41,6 +43,10 @@ public static class IdentityServiceExtensions
         {
             var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
             opt.Filters.Add(new AuthorizeFilter(policy));
+        })
+        .AddFluentValidation(config =>
+        {
+            config.RegisterValidatorsFromAssemblyContaining<Create>();
         });
 
         services.AddScoped<TokenService>();

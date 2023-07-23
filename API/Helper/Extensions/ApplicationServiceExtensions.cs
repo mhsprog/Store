@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application.Core;
+using Application.Interfaces;
+using Application.Products;
+using Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Persistence;
 
@@ -15,6 +20,11 @@ public static class ApplicationServiceExtensions
 
         services.AddDbContext<DataContext>(
             option => option.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
+
+        services.AddMediatR(typeof(Create.Handler).Assembly);
+        services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+        services.AddScoped<IUserAccessor, UserAccessor>();
 
         return services;
     }
