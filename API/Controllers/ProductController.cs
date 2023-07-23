@@ -10,4 +10,11 @@ public class ProductController : BaseApiController
     {
         return HandleResult(await Mediator.Send(new Create.Command { Product = product }));
     }
+
+    [HttpPut("Edit/{id:guid}")]
+    public async Task<IActionResult> Edit(Guid id, CreateProductDto dto)
+    {
+        dto.Id = id;
+        return HandleResult(await Mediator.Send(new Edit.Command { Product = dto }));
+    }
 }

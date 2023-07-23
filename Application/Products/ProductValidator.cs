@@ -26,6 +26,9 @@ public class ProductValidator : AbstractValidator<CreateProductDto>
     }
     protected bool CheckProduct(CreateProductDto product)
     {
-        return !_context.Products.Any(x => x.ProduceDate == product.ProduceDate && x.ManufactureEmail == product.ManufactureEmail);
+        return !_context.Products.Any(x 
+            => x.ProduceDate == product.ProduceDate 
+            && x.ManufactureEmail == product.ManufactureEmail
+            && x.Id != product.Id);
     }
 }
