@@ -17,4 +17,10 @@ public class ProductController : BaseApiController
         dto.Id = id;
         return HandleResult(await Mediator.Send(new Edit.Command { Product = dto }));
     }
+
+    [HttpDelete("Delete/{id:guid}")]
+    public async Task<ActionResult> Delete(Guid id)
+    {
+        return HandleResult(await Mediator.Send((new Delete.Command { Id = id })));
+    }
 }
