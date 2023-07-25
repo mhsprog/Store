@@ -1,4 +1,6 @@
-﻿namespace Application.Products;
+﻿using System.Text.Json.Serialization;
+
+namespace Application.Products;
 public class GetProductDto
 {
     public Guid Id { get; set; }
@@ -9,5 +11,7 @@ public class GetProductDto
     public bool IsAvailable { get; set; }
     public string Description { get; set; }
     public string Creator { get; set; }
+    [JsonIgnore]
+    public Guid CreatorId { get; set; }
     public DateTime CreatedAt { get; set; }
 }
