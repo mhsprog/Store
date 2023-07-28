@@ -18,7 +18,9 @@ public class ProductValidator : AbstractValidator<CreateProductDto>
         RuleFor(x => x.Description).MaximumLength(512);
 
         RuleFor(x => x.ManufactureEmail).NotEmpty()
-            .EmailAddress();
+            .EmailAddress()
+            .Matches(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+            .WithMessage("'Manufacture Email' is not a valid email address.");
 
         RuleFor(x => x.ManufacturePhone)
             .Matches("09[0-9]{9}$").WithMessage("Phone number is incorrect");
