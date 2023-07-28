@@ -2,6 +2,7 @@
 using Application.Products;
 using Domain;
 using FluentValidation.AspNetCore;
+using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -48,6 +49,15 @@ public static class IdentityServiceExtensions
         {
             config.RegisterValidatorsFromAssemblyContaining<Create>();
         });
+
+        services.AddAuthorization(opt =>
+        {
+            opt.AddPolicy("IsProductOwn", policy =>
+            {
+                policy.Requirements.Add(new IsProductOwn());
+            });
+        });
+        services.AddTransient<IAuthorizationHandler, IsProductOwnHandler>();
 
         services.AddScoped<TokenService>();
 
